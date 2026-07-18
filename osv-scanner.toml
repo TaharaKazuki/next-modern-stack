@@ -1,0 +1,11 @@
+# OSV-Scanner configuration
+# https://google.github.io/osv-scanner/configuration/
+
+[[IgnoredVulns]]
+id = "GHSA-qx2v-qp2m-jg93" # CVE-2026-41305: postcss <8.5.10 XSS via unescaped </style>
+reason = """
+postcss 8.4.31 is an exact transitive pin of next@16.2.9 and cannot be
+upgraded until Next.js updates it. postcss is only used at build time here
+(Tailwind/webpack toolchain); this app never re-stringifies user-submitted
+CSS, so the XSS vector does not apply. Re-evaluate on every Next.js upgrade.
+"""
