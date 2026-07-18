@@ -4,3 +4,10 @@ pre-commit:
       glob: "*.{js,jsx,ts,tsx,json,jsonc,css}"
       run: bunx biome check --write --no-errors-on-unmatched {staged_files}
       stage_fixed: true
+
+pre-push:
+  commands:
+    # Local first line of defense before anything reaches the remote;
+    # the authoritative gate is the Security workflow on the PR.
+    audit:
+      run: bun audit --ignore=GHSA-qx2v-qp2m-jg93
