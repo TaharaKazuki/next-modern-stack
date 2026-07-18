@@ -5,6 +5,7 @@
       "**",
       "!!.vscode",
       "!!**/.next",
+      "!!**/dist",
       "!!**/node_modules",
       "!!**/public"
     ]
@@ -35,5 +36,17 @@
       "cssModules": true,
       "tailwindDirectives": true
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["apps/api/**"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ]
 }
