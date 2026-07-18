@@ -1,0 +1,14 @@
+# Supply-chain hardening (see .github/workflows/security.yml for the CI layers)
+
+[install]
+# Layer 1: always pin exact versions when adding dependencies (no ^ / ~ ranges)
+exact = true
+
+# Layer 6: minimum release age — refuse package versions published less than
+# 3 days ago, so malware pushed to npm gets caught/unpublished before we can
+# ever install it (Shai-Hulud style attacks are typically removed within hours)
+minimumReleaseAge = 259200
+
+# Layer 2 (lifecycle scripts) needs no config: unlike npm, Bun never runs
+# dependency lifecycle scripts (preinstall/postinstall) unless the package is
+# explicitly listed in "trustedDependencies" in package.json.
