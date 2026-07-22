@@ -1,20 +1,20 @@
-## Summary
+## 概要
 
-<!-- What does this PR do and why? 1-3 lines. -->
+<!-- この PR で何を・なぜ行うか。1〜3行で。 -->
 
-## Changes
+## 変更内容
 
-<!-- Bullet the notable changes. -->
+<!-- 主な変更点を箇条書きで。 -->
 -
 
-## Verification
+## 動作確認
 
-<!-- How was this checked? Delete rows that don't apply. -->
+<!-- どう確認したか。該当しない行は削除。 -->
 - [ ] `bunx biome check .`
 - [ ] `bun --filter api build` / `bun --filter web build`
 - [ ] `cd apps/api && bun test src test`
 - [ ] `bun audit --ignore=GHSA-qx2v-qp2m-jg93`
 
-## Notes
+## 補足
 
-<!-- Anything reviewers should know: risks, follow-ups, deliberate ignores. Delete if none. -->
+<!-- レビュアーへの共有事項:リスク・フォローアップ・意図的な ignore など。なければ削除。 -->
